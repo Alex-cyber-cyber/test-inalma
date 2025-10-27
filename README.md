@@ -1,7 +1,7 @@
 # Prueba Técnica — Lógica + Python + Django + React
 
 **Tiempo sugerido:** 4–6 horas (puedes dividirlo en 2 días).  
-**Nivel objetivo:** Semi–Senior (ajustable).  
+**Nivel objetivo:** Semi–Senior.  
 **Stack:** Python 3.11+, Django 4.2+, DRF, React 18 (Vite), Vitest.
 
 ---
