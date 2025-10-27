@@ -1,0 +1,48 @@
+{
+  "candidate": "Nombre Apellidos",
+  "reviewer": "Tu Nombre",
+  "date": "YYYY-MM-DD",
+  "repo_url": "https://github.com/ORG/REPO",
+  "commit_sha": "abcdef1234567890",
+  "tests_passed": true,
+  "sections": {
+    "logica": {
+      "max": 25,
+      "earned": 0,
+      "notes": ""
+    },
+    "python": {
+      "max": 20,
+      "earned": 0,
+      "notes": ""
+    },
+    "react": {
+      "max": 20,
+      "earned": 0,
+      "notes": ""
+    },
+    "github": {
+      "max": 15,
+      "earned": 0,
+      "notes": ""
+    },
+    "buenas_practicas": {
+      "max": 10,
+      "earned": 0,
+      "notes": ""
+    },
+    "uso_ia": {
+      "max": 10,
+      "earned": 0,
+      "notes": ""
+    }
+  },
+  "penalties": [],
+  "totals": {
+    "before_penalties": 0,
+    "after_penalties": 0,
+    "final_total": 0,
+    "decision": ""
+  },
+  "review_summary": "Resumen breve: fortalezas, debilidades, recomendaciones."
+}

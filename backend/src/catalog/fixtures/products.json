@@ -1,0 +1,62 @@
+[
+  {
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+      "name": "Laptop",
+      "price": "1500.00",
+      "tags": [
+        "tech",
+        "pc"
+      ]
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+      "name": "Mouse",
+      "price": "20.00",
+      "tags": [
+        "tech",
+        "accessories"
+      ]
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+      "name": "Teclado",
+      "price": "45.50",
+      "tags": [
+        "tech",
+        "accessories"
+      ]
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 4,
+    "fields": {
+      "name": "Silla Gamer",
+      "price": "220.00",
+      "tags": [
+        "furniture",
+        "gaming"
+      ]
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 5,
+    "fields": {
+      "name": "Monitor",
+      "price": "299.99",
+      "tags": [
+        "tech",
+        "pc"
+      ]
+    }
+  }
+]

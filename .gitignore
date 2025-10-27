@@ -1,0 +1,28 @@
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+.venv/
+venv/
+.env.local
+
+# Node
+node_modules/
+dist/
+.vite/
+coverage/
+
+# Django/SQLite
+db.sqlite3
+
+# IDE/editor
+*.swp
+*.swo
+.vscode/
+.idea/
+.DS_Store
+
+# Logs
+*.log
