@@ -43,7 +43,7 @@ Resolver tres frentes:
 
 ```bash
 cd backend
-python -m venv .venv && source .venv/bin/activate   # Windows: .venv\\Scripts\\activate
+python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 python manage.py migrate
 python manage.py loaddata src/catalog/fixtures/products.json
@@ -168,16 +168,75 @@ Plantilla de calificación: **`plantillas/score.json`**.
 
 ---
 
-## 8) Flujo de trabajo en GitHub
+## 8) Flujo de Pull Request (PR)
 
-1. Trabaja en **rama de feature** (no en `main`).  
-2. Abre **PR a `main`** con:
-   - Descripción clara: *qué cambia / por qué / cómo probar / riesgos*.
-   - Evidencia de tests en verde (logs locales o CI).
-3. Recomendado: proteger `main` en *Settings → Branches → Add rule*:
-   - Requerir PR.
-   - Requerir checks de estado (CI).
-   - Bloquear force pushes.
+> La rama `main` está **protegida**: solo se integra por **PR** con **CI en verde** y **1 aprobación**.
+
+### 8.1 Candidatos (vía **fork**)
+
+1. **Fork** del repo y clona tu fork:
+   ```bash
+   git clone https://github.com/<usuario>/<fork>.git
+   cd <fork>
+   git remote add upstream https://github.com/kevindoblea1/test-inalma.git
+   ```
+2. **Crea tu rama** de trabajo:
+   ```bash
+   git switch -c feature/solucion-<apellido>
+   ```
+3. **Instala y corre tests** (deben fallar al inicio):
+   ```bash
+   # backend
+   cd backend && python -m venv .venv && source .venv/bin/activate   # Win: .venv\Scripts\activate
+   pip install -r requirements.txt
+   pytest -q
+   # frontend
+   cd ../frontend
+   npm install
+   npm test
+   ```
+4. **Implementa** cambios con **commits pequeños y claros**:
+   ```bash
+   git add .
+   git commit -m "feat: implementa min_path_sum y filtros por tags"
+   ```
+5. **Push** de tu rama y **abre PR** contra `kevindoblea1/test-inalma:main`:
+   ```bash
+   git push -u origin feature/solucion-<apellido>
+   ```
+6. **Requisitos del PR**:
+   - CI en verde (`backend` y `frontend`).
+   - **1 aprobación**.
+   - Adjunta `README_personal.md` y, si aplicó, `AI_USAGE.md`.
+
+> Mantén tu fork al día:
+```bash
+git fetch upstream
+git switch main
+git merge upstream/main
+git push origin main
+```
+
+### 8.2 Colaboradores internos (con permisos en el repo)
+
+```bash
+git switch -c feature/solucion-<apellido>
+# … cambios …
+git add .
+git commit -m "feat: solución"
+git push -u origin feature/solucion-<apellido>
+# Abre PR → base: main
+```
+
+### 8.3 Actualizar tu PR si `main` avanzó
+
+```bash
+# con upstream configurado
+git fetch upstream
+git switch feature/solucion-<apellido>
+git rebase upstream/main      # o: git merge upstream/main
+git push --force-with-lease   # solo si usaste rebase
+```
 
 ---
 
