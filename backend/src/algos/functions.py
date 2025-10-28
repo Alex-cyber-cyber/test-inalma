@@ -38,7 +38,7 @@ def min_path_sum(grid: List[List[int]]) -> int:
     if not grid or not grid[0]:
         return 0 # Caso base: grid vacía
     n, m = len(grid), len(grid[0]) # Dimensiones del grid Columnas y filas
-    dp = [[0] * m for _ in range(n)] # dp[i][j] = suma mínima para llegar a (i,j) i filas y j columnas
+    dp = [[0] * m for _ in range(n)] # dp[i][j] = suma mínima para llegar 
     dp[0][0] = grid[0][0] # Inicialización
     for i in range(1, n):
         dp[i][0] = dp[i - 1][0] + grid[i][0] # Primera columna (única opción: desde arriba)
@@ -60,11 +60,6 @@ def top_k_frequent_words(words: List[str], k: int) -> List[str]:
 
 
 
-#  [
-#  [1, 4, 5],
-#  [2, 7, 6],
-#  [6, 8, 7]
-# ]
 
 
 
